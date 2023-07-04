@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
         try {
+            System.out.println("START");
             InputStream templateInputStream = new FileInputStream("/Users/sblendorio/Documents/docsample.docx");
             WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load(templateInputStream);
             MainDocumentPart documentPart = wordMLPackage.getMainDocumentPart();
