@@ -3,20 +3,19 @@ package eu.sblendorio.doc2pdf;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 import org.docx4j.Docx4J;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.docx4j.openpackaging.parts.WordprocessingML.MainDocumentPart;
 
-public class Main {
+public class MainDoc2Pdf {
 
     public static void main(String[] args) {
 
         try {
             System.out.println("START");
-            InputStream templateInputStream = new FileInputStream("/Users/sblendorio/Documents/docsample.docx");
+            InputStream templateInputStream = new FileInputStream("/Users/sblendorio/Documents/docsample.doc");
             WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load(templateInputStream);
             MainDocumentPart documentPart = wordMLPackage.getMainDocumentPart();
 
