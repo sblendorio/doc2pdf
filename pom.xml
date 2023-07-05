@@ -107,7 +107,7 @@
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
-                                        <Main-Class>eu.sblendorio.doc2pdf.MainDoc2Pdf</Main-Class>
+                                        <Main-Class>eu.sblendorio.doc2pdf.BenchmarkHtml2Pdf</Main-Class>
                                         <Build-Number>1.0</Build-Number>
                                     </manifestEntries>
                                 </transformer>
@@ -138,7 +138,7 @@
                                     </includes>
                                 </resource>
                             </resources>
-                            <outputDirectory/>
+                            <outputDirectory>${basedir}/target</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
