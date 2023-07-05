@@ -14,7 +14,7 @@ public class MainPd4Mlv3 {
 
     public static void main(String[] args) throws Exception {
         int times = args == null || args.length == 0 ? 1 : NumberUtils.toInt(args[0]);
-        String html = Files.readString(Paths.get("/Users/sblendorio/tmp/ciccio.html"));
+        String html = Files.readString(Paths.get("src/main/resources/ciccio.html"));
         byte[] pdf = null;
         long start = System.currentTimeMillis();
 
@@ -34,7 +34,7 @@ public class MainPd4Mlv3 {
         pd4ml.setPageSize(pdfLandscape ? new Dimension(842, 595) : new Dimension(595, 842));
         pd4ml.setPageInsets(new Insets(0, 0, 0, 0));
         pd4ml.setHtmlWidth(1190);
-        pd4ml.useTTF("/Users/sblendorio/tmp/fonts", true);
+        pd4ml.useTTF("src/main/resources/fonts", true);
         try (var bais = new ByteArrayInputStream(html.getBytes(UTF_8));
              var baos = new ByteArrayOutputStream()) {
             pd4ml.render(new InputStreamReader(bais), baos);
@@ -48,7 +48,7 @@ public class MainPd4Mlv3 {
         pd4ml.setPageSize(pdfLandscape ? new Dimension(842, 595) : new Dimension(595, 842));
         pd4ml.setPageInsets(new Insets(0, 0, 0, 0));
         pd4ml.setHtmlWidth(1190);
-        pd4ml.useTTF("/Users/sblendorio/tmp/fonts", true);
+        pd4ml.useTTF("src/main/resources/fonts", true);
 
         String html = Files.readString(Paths.get("/Users/sblendorio/tmp/ciccio.html"));
         ByteArrayInputStream bais = new ByteArrayInputStream(html.getBytes());
