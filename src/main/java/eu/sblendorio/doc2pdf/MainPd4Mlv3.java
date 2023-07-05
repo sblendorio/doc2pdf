@@ -51,9 +51,9 @@ public class MainPd4Mlv3 {
         pd4ml.useTTF("src/main/resources/fonts", true);
 
         String html = Files.readString(Paths.get("/Users/sblendorio/tmp/ciccio.html"));
-        ByteArrayInputStream bais = new ByteArrayInputStream(html.getBytes());
+        ByteArrayInputStream bais = new ByteArrayInputStream(html.getBytes(UTF_8));
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        pd4ml.render(new InputStreamReader(new ByteArrayInputStream(html.getBytes(UTF_8))), baos);
+        pd4ml.render(new InputStreamReader(bais), baos);
 
 
         // read and parse HTML
