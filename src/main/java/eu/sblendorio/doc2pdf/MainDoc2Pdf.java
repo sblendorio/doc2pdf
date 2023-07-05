@@ -17,7 +17,6 @@ public class MainDoc2Pdf {
             System.out.println("START");
             InputStream templateInputStream = new FileInputStream("/Users/sblendorio/Documents/docsample.doc");
             WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load(templateInputStream);
-            MainDocumentPart documentPart = wordMLPackage.getMainDocumentPart();
 
             String outputfilepath = "/Users/sblendorio/Documents/pdfsample.pdf";
             FileOutputStream os = new FileOutputStream(outputfilepath);
