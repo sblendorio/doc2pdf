@@ -17,9 +17,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class MainPd4Mlv4 {
 
-    public static void main(String[] args) throws Exception {
+    public static void main12(String[] args) throws Exception {
         int times = args == null || args.length == 0 ? 1 : NumberUtils.toInt(args[0]);
-        String html = Files.readString(Paths.get("src/main/resources/ciccio.html"));
+        String html = Files.readString(Paths.get("src/main/resources/index4.html"));
         byte[] pdf = null;
         long start = System.currentTimeMillis();
 
@@ -48,19 +48,22 @@ public class MainPd4Mlv4 {
 
     }
 
-    public static void main2(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         PD4ML pd4ml = new PD4ML();
         boolean pdfLandscape = false;
-        pd4ml.setPageSize(pdfLandscape ? new PageSize(842, 595) : new PageSize(595, 842));
-        pd4ml.setPageMargins(new PageMargins(0, 0, 0, 0));
-        pd4ml.setHtmlWidth(1190);
+        // pd4ml.setPageSize(pdfLandscape ? new PageSize(842, 595) : new PageSize(595, 842));
+        // pd4ml.setPageMargins(new PageMargins(0, 0, 0, 0));
+        // pd4ml.setHtmlWidth(1190);
         pd4ml.useTTF("src/main/resources/fonts");
 
-        String html = Files.readString(Paths.get("/Users/sblendorio/tmp/ciccio.html"));
+        String html = Files.readString(Paths.get("src/main/resources/index5.html"));
         ByteArrayInputStream bais = new ByteArrayInputStream(html.getBytes());
 
         // read and parse HTML
+        pd4ml.setPageFooter("<center><span style='color: red'>Page Footer: $[page]</span></center>", 30, "2+");
+        // pd4ml.setPageHeader("<span style='color: blue'>Page Header: $[page]</span>", 30, "1+");
         pd4ml.readHTML(bais);
+
         File pdf = File.createTempFile("result", ".pdf");
         FileOutputStream fos = new FileOutputStream(pdf);
 
