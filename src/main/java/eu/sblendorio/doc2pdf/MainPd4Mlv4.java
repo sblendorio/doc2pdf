@@ -60,7 +60,7 @@ public class MainPd4Mlv4 {
         ByteArrayInputStream bais = new ByteArrayInputStream(html.getBytes());
 
         // read and parse HTML
-        pd4ml.setPageFooter("<center><span style='color: red'>Page Footer: $[page]</span></center>", 30, "2+");
+        // pd4ml.setPageFooter("<center><span style='color: red'>Page Footer: $[page]</span></center>", 30, "2+");
         // pd4ml.setPageHeader("<span style='color: blue'>Page Header: $[page]</span>", 30, "1+");
         pd4ml.readHTML(bais);
 
